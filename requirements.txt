@@ -1,0 +1,4 @@
+pandas>=2.0.0
+ydata-profiling>=4.6.0
+streamlit>=1.30.0
+streamlit-pandas-profiling>=0.1.3 

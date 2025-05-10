@@ -1,0 +1,502 @@
+# Hello there 👋
+
+Thanks for stopping by! We use cookies to help us understand how you interact with our website.
+
+By clicking “Accept all”, you consent to our use of cookies. For more information, please see our [privacy policy](https://docs.streamlit.io/develop/api-reference/www.streamlit.io/privacy-policy).
+
+Cookie settingsReject allAccept all
+
+1. Contents
+2. [Simple chart elements](https://docs.streamlit.io/develop/api-reference/charts#simple-chart-elements)
+3. [Advanced chart elements](https://docs.streamlit.io/develop/api-reference/charts#advanced-chart-elements)
+
+# Chart elements
+
+Streamlit supports several different charting libraries, and our goal is to
+continually add support for more. Right now, the most basic library in our
+arsenal is [Matplotlib](https://matplotlib.org/). Then there are also
+interactive charting libraries like [Vega\
+Lite](https://vega.github.io/vega-lite/) (2D charts) and
+[deck.gl](https://github.com/uber/deck.gl) (maps and 3D charts). And
+finally we also provide a few chart types that are "native" to Streamlit,
+like `st.line_chart` and `st.area_chart`.
+
+## Simple chart elements
+
+[![screenshot](https://docs.streamlit.io/images/api/area_chart.jpg)**Simple area charts** \\
+Display an area chart.\\
+\\
+`st.area_chart(my_data_frame)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.area_chart) [![screenshot](https://docs.streamlit.io/images/api/bar_chart.jpg)**Simple bar charts** \\
+Display a bar chart.\\
+\\
+`st.bar_chart(my_data_frame)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.bar_chart) [![screenshot](https://docs.streamlit.io/images/api/line_chart.jpg)**Simple line charts** \\
+Display a line chart.\\
+\\
+`st.line_chart(my_data_frame)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.line_chart) [![screenshot](https://docs.streamlit.io/images/api/scatter_chart.svg)**Simple scatter charts** \\
+Display a line chart.\\
+\\
+`st.scatter_chart(my_data_frame)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.scatter_chart) [![screenshot](https://docs.streamlit.io/images/api/map.jpg)**Scatterplots on maps** \\
+Display a map with points on it.\\
+\\
+`st.map(my_data_frame)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.map)
+
+## Advanced chart elements
+
+[![screenshot](https://docs.streamlit.io/images/api/pyplot.jpg)**Matplotlib** \\
+Display a matplotlib.pyplot figure.\\
+\\
+`st.pyplot(my_mpl_figure)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.pyplot) [![screenshot](https://docs.streamlit.io/images/api/vega_lite_chart.jpg)**Altair** \\
+Display a chart using the Altair library.\\
+\\
+`st.altair_chart(my_altair_chart)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.altair_chart) [![screenshot](https://docs.streamlit.io/images/api/vega_lite_chart.jpg)**Vega-Lite** \\
+Display a chart using the Vega-Lite library.\\
+\\
+`st.vega_lite_chart(my_vega_lite_chart)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.vega_lite_chart) [![screenshot](https://docs.streamlit.io/images/api/plotly_chart.jpg)**Plotly** \\
+Display an interactive Plotly chart.\\
+\\
+`st.plotly_chart(my_plotly_chart)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart) [![screenshot](https://docs.streamlit.io/images/api/bokeh_chart.jpg)**Bokeh** \\
+Display an interactive Bokeh chart.\\
+\\
+`st.bokeh_chart(my_bokeh_chart)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.bokeh_chart) [![screenshot](https://docs.streamlit.io/images/api/pydeck_chart.jpg)**PyDeck** \\
+Display a chart using the PyDeck library.\\
+\\
+`st.pydeck_chart(my_pydeck_chart)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.pydeck_chart) [![screenshot](https://docs.streamlit.io/images/api/graphviz_chart.jpg)**GraphViz** \\
+Display a graph using the dagre-d3 library.\\
+\\
+`st.graphviz_chart(my_graphviz_spec)\\
+`](https://docs.streamlit.io/develop/api-reference/charts/st.graphviz_chart)
+
+Third-party components
+
+These are featured components created by our lovely community. For more examples and inspiration, check out our [Components Gallery](https://streamlit.io/components) and [Streamlit Extras](https://extras.streamlit.app/)!
+
+- <-
+- ->
+
+Previous
+
+[![screenshot](https://docs.streamlit.io/images/api/components/lottie.jpg)**Streamlit Lottie**](https://github.com/andfanilo/streamlit-lottie)
+
+[Integrate](https://github.com/andfanilo/streamlit-lottie) [Lottie](https://lottiefiles.com/) animations inside your Streamlit app. Created by [@andfanilo](https://github.com/andfanilo).
+
+`lottie_hello = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_V9t630.json")
+st_lottie(lottie_hello, key="hello")
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/plotly-events.jpg)**Plotly Events**](https://github.com/null-jones/streamlit-plotly-events)
+
+[Make Plotly charts interactive!. Created by](https://github.com/null-jones/streamlit-plotly-events) [@null-jones](https://github.com/null-jones/).
+
+`fig = px.line(x=[1], y=[1])
+selected_points = plotly_events(fig)
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/extras-chart-annotations.jpg)**Streamlit Extras**](https://extras.streamlit.app/)
+
+[A library with useful Streamlit extras. Created by](https://extras.streamlit.app/) [@arnaudmiribel](https://github.com/arnaudmiribel/).
+
+`chart += get_annotations_chart(annotations=[("Mar 01, 2008", "Pretty good day for GOOG"), ("Dec 01, 2007", "Something's going wrong for GOOG & AAPL"), ("Nov 01, 2008", "Market starts again thanks to..."), ("Dec 01, 2009", "Small crash for GOOG after..."),],)
+st.altair_chart(chart, use_container_width=True)
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/plost.jpg)**Plost**](https://github.com/tvst/plost)
+
+[A deceptively simple plotting library for Streamlit. Created by](https://github.com/tvst/plost) [@tvst](https://github.com/tvst).
+
+`import plost
+plost.line_chart(my_dataframe, x='time', y='stock_value', color='stock_name',)
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/hiplot.jpg)**HiPlot**](https://github.com/facebookresearch/hiplot)
+
+[High dimensional Interactive Plotting. Created by](https://github.com/facebookresearch/hiplot) [@facebookresearch](https://github.com/facebookresearch).
+
+`data = [{'dropout':0.1, 'lr': 0.001, 'loss': 10.0, 'optimizer': 'SGD'}, {'dropout':0.15, 'lr': 0.01, 'loss': 3.5, 'optimizer': 'Adam'}, {'dropout':0.3, 'lr': 0.1, 'loss': 4.5, 'optimizer': 'Adam'}]
+hip.Experiment.from_iterable(data).display()
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/echarts.jpg)**ECharts**](https://github.com/andfanilo/streamlit-echarts)
+
+[High dimensional Interactive Plotting. Created by](https://github.com/andfanilo/streamlit-echarts) [@andfanilo](https://github.com/andfanilo).
+
+`from streamlit_echarts import st_echarts
+st_echarts(options=options)
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/folium.jpg)**Streamlit Folium**](https://github.com/randyzwitch/streamlit-folium)
+
+[Streamlit Component for rendering Folium maps. Created by](https://github.com/randyzwitch/streamlit-folium) [@randyzwitch](https://github.com/randyzwitch).
+
+`m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+st_data = st_folium(m, width=725)
+`
+
+[![screenshot](https://streamlit.io/images/api/components/spacy.jpg)**Spacy-Streamlit**](https://github.com/explosion/spacy-streamlit)
+
+[spaCy building blocks and visualizers for Streamlit apps. Created by](https://github.com/explosion/spacy-streamlit) [@explosion](https://github.com/explosion).
+
+`models = ["en_core_web_sm", "en_core_web_md"]
+spacy_streamlit.visualize(models, "Sundar Pichai is the CEO of Google.")
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/agraph.jpg)**Streamlit Agraph**](https://github.com/ChrisDelClea/streamlit-agraph)
+
+[A Streamlit Graph Vis, based on](https://github.com/ChrisDelClea/streamlit-agraph) [react-grah-vis](https://github.com/crubier/react-graph-vis). Created by [@ChrisDelClea](https://github.com/ChrisDelClea).
+
+`from streamlit_agraph import agraph, Node, Edge, Config
+agraph(nodes=nodes, edges=edges, config=config)
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/lottie.jpg)**Streamlit Lottie**](https://github.com/andfanilo/streamlit-lottie)
+
+[Integrate](https://github.com/andfanilo/streamlit-lottie) [Lottie](https://lottiefiles.com/) animations inside your Streamlit app. Created by [@andfanilo](https://github.com/andfanilo).
+
+`lottie_hello = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_V9t630.json")
+st_lottie(lottie_hello, key="hello")
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/plotly-events.jpg)**Plotly Events**](https://github.com/null-jones/streamlit-plotly-events)
+
+[Make Plotly charts interactive!. Created by](https://github.com/null-jones/streamlit-plotly-events) [@null-jones](https://github.com/null-jones/).
+
+`fig = px.line(x=[1], y=[1])
+selected_points = plotly_events(fig)
+`
+
+[![screenshot](https://docs.streamlit.io/images/api/components/extras-chart-annotations.jpg)**Streamlit Extras**](https://extras.streamlit.app/)
+
+[A library with useful Streamlit extras. Created by](https://extras.streamlit.app/) [@arnaudmiribel](https://github.com/arnaudmiribel/).
+
+`chart += get_annotations_chart(annotations=[("Mar 01, 2008", "Pretty good day for GOOG"), ("Dec 01, 2007", "Something's going wrong for GOOG & AAPL"), ("Nov 01, 2008", "Market starts again thanks to..."), ("Dec 01, 2009", "Small crash for GOOG after..."),],)
+st.altair_chart(chart, use_container_width=True)
+`
+
+Next
+
+[Previous: Data elements](https://docs.streamlit.io/develop/api-reference/data) [Next: st.area\_chart](https://docs.streamlit.io/develop/api-reference/charts/st.area_chart)_forum_
+
+### Still have questions?
+
+Our [forums](https://discuss.streamlit.io/) are full of helpful information and Streamlit experts.
+
+[iframe](https://www.google.com/recaptcha/enterprise/anchor?ar=1&k=6Lck4YwlAAAAAEIE1hR--varWp0qu9F-8-emQn2v&co=aHR0cHM6Ly9kb2NzLnN0cmVhbGl0LmlvOjQ0My4&hl=en&v=Hi8UmRMnhdOBM3IuViTkapUP&size=invisible&cb=jehghni5pshm)
+
+---
+
+# Hello there 👋
+
+Thanks for stopping by! We use cookies to help us understand how you interact with our website.
+
+By clicking “Accept all”, you consent to our use of cookies. For more information, please see our [privacy policy](https://docs.streamlit.io/develop/api-reference/charts/www.streamlit.io/privacy-policy).
+
+Cookie settingsReject allAccept all
+
+1. Contents
+2. [st.plotly\_chart](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart#stplotly_chart)
+3. [Chart selections](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart#chart-selections)
+4. [PlotlyState](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart#plotlystate)
+5. [PlotlySelectionState](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart#plotlyselectionstate)
+6. [Theming](https://docs.streamlit.io/develop/api-reference/charts/st.plotly_chart#theming)
+
+## st.plotly\_chart
+
+Streamlit VersionVersion 1.45.0Version 1.44.0Version 1.43.0Version 1.42.0Version 1.41.0Version 1.40.0Version 1.39.0Version 1.38.0Version 1.37.0Version 1.36.0Version 1.35.0Version 1.34.0Version 1.33.0Version 1.32.0Version 1.31.0Version 1.30.0Version 1.29.0Version 1.28.0Version 1.27.0Version 1.26.0Version 1.25.0Version 1.24.0Version 1.23.0Version 1.22.0Version 1.21.0Version 1.20.0
+
+Display an interactive Plotly chart.
+
+[Plotly](https://plot.ly/python) is a charting library for Python.
+The arguments to this function closely follow the ones for Plotly's
+`plot()` function.
+
+To show Plotly charts in Streamlit, call `st.plotly_chart` wherever
+you would call Plotly's `py.plot` or `py.iplot`.
+
+Important
+
+You must install `plotly` to use this command. Your app's
+performance may be enhanced by installing `orjson` as well.
+
+| Function signature [\[source\]](https://github.com/streamlit/streamlit/blob/1.45.0/lib/streamlit/elements/plotly_chart.py#L305 "View st.plotly_chart source code on GitHub") |
+| --- |
+| st.plotly\_chart(figure\_or\_data, use\_container\_width=True, \*, theme="streamlit", key=None, on\_select="ignore", selection\_mode=('points', 'box', 'lasso'), \*\*kwargs) |
+| --- |
+| Parameters |
+| figure\_or\_data(plotly.graph\_objs.Figure, plotly.graph\_objs.Data, or dict/list of plotly.graph\_objs.Figure/Data) | The Plotly `Figure` or `Data` object to render. See<br>[https://plot.ly/python/](https://plot.ly/python/) for examples of graph descriptions. |
+| use\_container\_width(bool) | Whether to override the figure's native width with the width of<br>the parent container. If `use_container_width` is `True` (default),<br>Streamlit sets the width of the figure to match the width of the parent<br>container. If `use_container_width` is `False`, Streamlit sets the<br>width of the chart to fit its contents according to the plotting library,<br>up to the width of the parent container. |
+| theme("streamlit" or None) | The theme of the chart. If `theme` is `"streamlit"` (default),<br>Streamlit uses its own design default. If `theme` is `None`,<br>Streamlit falls back to the default behavior of the library. |
+| key(str) | An optional string to use for giving this element a stable<br>identity. If `key` is `None` (default), this element's identity<br>will be determined based on the values of the other parameters.<br>Additionally, if selections are activated and `key` is provided,<br>Streamlit will register the key in Session State to store the<br>selection state. The selection state is read-only. |
+| on\_select("ignore" or "rerun" or callable) | How the figure should respond to user selection events. This<br>controls whether or not the figure behaves like an input widget.<br>`on_select` can be one of the following:<br>- `"ignore"` (default): Streamlit will not react to any selection<br>events in the chart. The figure will not behave like an input<br>widget.<br>- `"rerun"`: Streamlit will rerun the app when the user selects<br>data in the chart. In this case, `st.plotly_chart` will return<br>the selection data as a dictionary.<br>- A `callable`: Streamlit will rerun the app and execute the<br>`callable` as a callback function before the rest of the app.<br>In this case, `st.plotly_chart` will return the selection data<br>as a dictionary. |
+| selection\_mode("points", "box", "lasso" or an Iterable of these) | The selection mode of the chart. This can be one of the following:<br>- `"points"`: The chart will allow selections based on individual<br>data points.<br>- `"box"`: The chart will allow selections based on rectangular<br>areas.<br>- `"lasso"`: The chart will allow selections based on freeform<br>areas.<br>- An `Iterable` of the above options: The chart will allow<br>selections based on the modes specified.<br>All selections modes are activated by default. |
+| \*\*kwargs(null) | Any argument accepted by Plotly's `plot()` function. |
+| Returns |
+| (element or dict) | If `on_select` is `"ignore"` (default), this command returns an<br>internal placeholder for the chart element. Otherwise, this command<br>returns a dictionary-like object that supports both key and<br>attribute notation. The attributes are described by the<br>`PlotlyState` dictionary schema. |
+
+#### Example
+
+The example below comes straight from the examples at
+[https://plot.ly/python](https://plot.ly/python). Note that `plotly.figure_factory` requires
+`scipy` to run.
+
+```python
+import streamlit as st
+import numpy as np
+import plotly.figure_factory as ff
+
+# Add histogram data
+x1 = np.random.randn(200) - 2
+x2 = np.random.randn(200)
+x3 = np.random.randn(200) + 2
+
+# Group data together
+hist_data = [x1, x2, x3]
+
+group_labels = ['Group 1', 'Group 2', 'Group 3']
+
+# Create distplot with custom bin_size
+fig = ff.create_distplot(
+        hist_data, group_labels, bin_size=[.1, .25, .5])
+
+# Plot!
+st.plotly_chart(fig)
+```
+
+Copy
+
+Streamlit
+
+[Built with Streamlit 🎈](https://streamlit.io/)
+
+[Fullscreen _open\_in\_new_](https://doc-plotly-chart.streamlit.app//?utm_medium=oembed&)
+
+## Chart selections
+
+### PlotlyState
+
+Streamlit VersionVersion 1.45.0Version 1.44.0Version 1.43.0Version 1.42.0Version 1.41.0Version 1.40.0Version 1.39.0Version 1.38.0Version 1.37.0Version 1.36.0Version 1.35.0Version 1.34.0Version 1.33.0Version 1.32.0Version 1.31.0Version 1.30.0Version 1.29.0Version 1.28.0Version 1.27.0Version 1.26.0Version 1.25.0Version 1.24.0Version 1.23.0Version 1.22.0Version 1.21.0Version 1.20.0
+
+The schema for the Plotly chart event state.
+
+The event state is stored in a dictionary-like object that supports both
+key and attribute notation. Event states cannot be programmatically
+changed or set through Session State.
+
+Only selection events are supported at this time.
+
+| Attributes |
+| selection(dict) | The state of the `on_select` event. This attribute returns a<br>dictionary-like object that supports both key and attribute notation.<br>The attributes are described by the `PlotlySelectionState` dictionary<br>schema. |
+
+#### Example
+
+Try selecting points by any of the three available methods (direct click,
+box, or lasso). The current selection state is available through Session
+State or as the output of the chart function.
+
+```python
+import streamlit as st
+import plotly.express as px
+
+df = px.data.iris()  # iris is a pandas DataFrame
+fig = px.scatter(df, x="sepal_width", y="sepal_length")
+
+event = st.plotly_chart(fig, key="iris", on_select="rerun")
+
+event
+```
+
+Copy
+
+Streamlit
+
+[Built with Streamlit 🎈](https://streamlit.io/)
+
+[Fullscreen _open\_in\_new_](https://doc-chart-events-plotly-state.streamlit.app//?utm_medium=oembed&)
+
+### PlotlySelectionState
+
+Streamlit VersionVersion 1.45.0Version 1.44.0Version 1.43.0Version 1.42.0Version 1.41.0Version 1.40.0Version 1.39.0Version 1.38.0Version 1.37.0Version 1.36.0Version 1.35.0Version 1.34.0Version 1.33.0Version 1.32.0Version 1.31.0Version 1.30.0Version 1.29.0Version 1.28.0Version 1.27.0Version 1.26.0Version 1.25.0Version 1.24.0Version 1.23.0Version 1.22.0Version 1.21.0Version 1.20.0
+
+The schema for the Plotly chart selection state.
+
+The selection state is stored in a dictionary-like object that supports both
+key and attribute notation. Selection states cannot be programmatically
+changed or set through Session State.
+
+| Attributes |
+| points(list\[dict\[str, Any\]\]) | The selected data points in the chart, including the data points<br>selected by the box and lasso mode. The data includes the values<br>associated to each point and a point index used to populate<br>`point_indices`. If additional information has been assigned to your<br>points, such as size or legend group, this is also included. |
+| point\_indices(list\[int\]) | The numerical indices of all selected data points in the chart. The<br>details of each identified point are included in `points`. |
+| box(list\[dict\[str, Any\]\]) | The metadata related to the box selection. This includes the<br>coordinates of the selected area. |
+| lasso(list\[dict\[str, Any\]\]) | The metadata related to the lasso selection. This includes the<br>coordinates of the selected area. |
+
+#### Example
+
+When working with more complicated graphs, the `points` attribute
+displays additional information. Try selecting points in the following
+example:
+
+```python
+import streamlit as st
+import plotly.express as px
+
+df = px.data.iris()
+fig = px.scatter(
+    df,
+    x="sepal_width",
+    y="sepal_length",
+    color="species",
+    size="petal_length",
+    hover_data=["petal_width"],
+)
+
+event = st.plotly_chart(fig, key="iris", on_select="rerun")
+
+event.selection
+```
+
+Copy
+
+Streamlit
+
+[Built with Streamlit 🎈](https://streamlit.io/)
+
+[Fullscreen _open\_in\_new_](https://doc-chart-events-plotly-selection-state.streamlit.app//?utm_medium=oembed&)
+
+This is an example of the selection state when selecting a single point:
+
+```python
+{
+  "points": [\
+    {\
+      "curve_number": 2,\
+      "point_number": 9,\
+      "point_index": 9,\
+      "x": 3.6,\
+      "y": 7.2,\
+      "customdata": [\
+        2.5\
+      ],\
+      "marker_size": 6.1,\
+      "legendgroup": "virginica"\
+    }\
+  ],
+  "point_indices": [\
+    9\
+  ],
+  "box": [],
+  "lasso": []
+}
+```
+
+Copy
+
+## Theming
+
+Plotly charts are displayed using the Streamlit theme by default. This theme is sleek, user-friendly, and incorporates Streamlit's color palette. The added benefit is that your charts better integrate with the rest of your app's design.
+
+The Streamlit theme is available from Streamlit 1.16.0 through the `theme="streamlit"` keyword argument. To disable it, and use Plotly's native theme, use `theme=None` instead.
+
+Let's look at an example of charts with the Streamlit theme and the native Plotly theme:
+
+`import plotly.express as px
+import streamlit as st
+df = px.data.gapminder()
+fig = px.scatter(
+    df.query("year==2007"),
+    x="gdpPercap",
+    y="lifeExp",
+    size="pop",
+    color="continent",
+    hover_name="country",
+    log_x=True,
+    size_max=60,
+)
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Plotly theme.
+    st.plotly_chart(fig, theme=None, use_container_width=True)
+`
+
+Click the tabs in the interactive app below to see the charts with the Streamlit theme enabled and disabled.
+
+Streamlit
+
+[Built with Streamlit 🎈](https://streamlit.io/)
+
+[Fullscreen _open\_in\_new_](https://doc-plotly-chart-theme.streamlit.app/?utm_medium=oembed)
+
+If you're wondering if your own customizations will still be taken into account, don't worry! You can still make changes to your chart configurations. In other words, although we now enable the Streamlit theme by default, you can overwrite it with custom colors or fonts. For example, if you want a chart line to be green instead of the default red, you can do it!
+
+Here's an example of an Plotly chart where a custom color scale is defined and reflected:
+
+`import plotly.express as px
+import streamlit as st
+st.subheader("Define a custom colorscale")
+df = px.data.iris()
+fig = px.scatter(
+    df,
+    x="sepal_width",
+    y="sepal_length",
+    color="sepal_length",
+    color_continuous_scale="reds",
+)
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    st.plotly_chart(fig, theme="streamlit", use_container_width=True)
+with tab2:
+    st.plotly_chart(fig, theme=None, use_container_width=True)
+`
+
+Notice how the custom color scale is still reflected in the chart, even when the Streamlit theme is enabled 👇
+
+Streamlit
+
+[Built with Streamlit 🎈](https://streamlit.io/)
+
+[Fullscreen _open\_in\_new_](https://doc-plotly-custom-colors.streamlit.app/?utm_medium=oembed)
+
+For many more examples of Plotly charts with and without the Streamlit theme, check out the [plotly.streamlit.app](https://plotly.streamlit.app/).
+
+[Previous: st.graphviz\_chart](https://docs.streamlit.io/develop/api-reference/charts/st.graphviz_chart) [Next: st.pydeck\_chart](https://docs.streamlit.io/develop/api-reference/charts/st.pydeck_chart)_forum_
+
+### Still have questions?
+
+Our [forums](https://discuss.streamlit.io/) are full of helpful information and Streamlit experts.
+
+reCAPTCHA
+
+Recaptcha requires verification.
+
+[Privacy](https://www.google.com/intl/en/policies/privacy/) \- [Terms](https://www.google.com/intl/en/policies/terms/)
+
+protected by **reCAPTCHA**
+
+[Privacy](https://www.google.com/intl/en/policies/privacy/) \- [Terms](https://www.google.com/intl/en/policies/terms/)<environment_details>
+# VSCode Visible Files
+.clinerules/new_rule
+
+# VSCode Open Tabs
+.clinerules/new_rule
+
+# Current Time
+5/10/2025, 9:42:20 AM (America/Bogota, UTC-5:00)
+
+# Context Window Usage
+166,335 / 1,048.576K tokens used (16%)
+
+# Current Mode
+ACT MODE
+</environment_details>
